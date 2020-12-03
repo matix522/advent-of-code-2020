@@ -19,10 +19,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         let upper_bound: usize = get_next(&mut elements)?;
         let letter: char = get_next(&mut elements)?;
         let password: &str = elements.skip(1).next().unwrap();
-        
+
         let letter_count = password.chars().filter(|&c| c == letter).count();
 
-        if  (lower_bound..=upper_bound).contains(&letter_count) {
+        if (lower_bound..=upper_bound).contains(&letter_count) {
             correct_password_counter += 1;
         }
     }

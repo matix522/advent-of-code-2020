@@ -23,13 +23,14 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         let letter: char = get_next(&mut elements)?;
         let password: &str = elements.skip(1).next().unwrap();
-        
-        let correct_letter_count = password.char_indices()
-                                        .filter(|&(i,_)| first_index == i || second_index == i)
-                                        .filter(|&(_,c)| c == letter)
-                                        .count();
 
-        if  correct_letter_count == 1 {
+        let correct_letter_count = password
+            .char_indices()
+            .filter(|&(i, _)| first_index == i || second_index == i)
+            .filter(|&(_, c)| c == letter)
+            .count();
+
+        if correct_letter_count == 1 {
             correct_password_counter += 1;
         }
     }
