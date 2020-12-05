@@ -1,15 +1,6 @@
 use regex::Regex;
-use std::char::*;
 use std::collections::BTreeSet;
 use std::{error::Error, fs::File, io::prelude::*};
-enum PassportEntry {
-    BirthYear(usize),
-    IssueYear(usize),
-    ExpirationYear(usize),
-}
-
-struct BirthYear {}
-
 fn main() -> Result<(), Box<dyn Error>> {
     let mut input_file = File::open("day04/input.txt")?;
 
