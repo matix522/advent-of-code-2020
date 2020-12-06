@@ -1,4 +1,4 @@
-use std::{io::BufReader};
+use std::io::BufReader;
 use std::{error::Error, fs::File, io::prelude::*};
 
 fn main() -> Result<(), Box<dyn Error>> {

@@ -38,3 +38,9 @@ path = "day05/task1.rs"
 [[bin]]
 name = "day05_2"
 path = "day05/task2.rs"
+[[bin]]
+name = "day06_1"
+path = "day06/task1.rs"
+[[bin]]
+name = "day06_2"
+path = "day06/task2.rs"
