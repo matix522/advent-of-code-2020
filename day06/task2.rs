@@ -13,12 +13,12 @@ fn main() -> Result<(), Box<dyn Error>> {
     for group in data.split("\n\n") {
         let mut group_awnsers: Option<BTreeSet<char>> = None;
         for person in group.split('\n') {
-            let mut person_awnsers: BTreeSet<char> = BTreeSet::new();
+            let mut person_awnsers = BTreeSet::new();
             for c in person.chars().filter(|c| c.is_alphabetic()) {
                 person_awnsers.insert(c);
             }
             if let Some(awnsers) = &mut group_awnsers {
-                *awnsers = awnsers.intersection(&person_awnsers).map(|&c| c).collect();
+                *awnsers = &person_awnsers & awnsers;
             } else {
                 group_awnsers = Some(person_awnsers);
             }
